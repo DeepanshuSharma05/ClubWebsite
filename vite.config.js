@@ -5,12 +5,17 @@ export default defineConfig({
   plugins: [
     tailwindcss(),
     react()
-  ],build: {
+  ], build: {
     outDir: 'dist',
-    sourcemap: true
+    emptyOutDir: true,
+    rollupOptions: {
+      input: path.resolve(__dirname, 'index.html')
+    }
   },
-  server: {
-    port: 3000
+  resolve: {
+    alias: {
+      '@': path.resolve(__dirname, './src')
+    }
   }
 
 })
