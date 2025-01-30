@@ -7,15 +7,17 @@ export default defineConfig({
     react()
   ], build: {
     outDir: 'dist',
+    target: 'esnext',
+    assetsDir: 'assets',
     emptyOutDir: true,
     rollupOptions: {
-      input: path.resolve(__dirname, 'index.html')
+      output: {
+        manualChunks: undefined
+      }
     }
   },
-  resolve: {
-    alias: {
-      '@': path.resolve(__dirname, './src')
-    }
+  server: {
+    port: 3000
   }
 
 })
