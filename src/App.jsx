@@ -19,6 +19,9 @@ function App() {
                 <Header />
                 <main className="max-w-7xl mx-auto py-6 sm:px-6 lg:px-8">
                     <Routes>
+                        <Route path="/" element={<Home />} />
+                        {/* Add this catch-all route */}
+                        <Route path="*" element={<Navigate to="/" replace />} />
                         <Route path="/admin" element={<AdminDashboard />} />
                         <Route path="/" element={<Home />} />
                         <Route path="/register" element={<Register />} />

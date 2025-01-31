@@ -1,15 +1,6 @@
 {
   "version": 2,
   "framework": "vite",
-  "buildCommand": "npm run build",
-  "outputDirectory": "dist",
-  "installCommand": "npm install",
-  "builds": [
-    {
-      "src": "dist/**",
-      "use": "@vercel/static"
-    }
-  ],
   "routes": [
     {
       "src": "/assets/(.*)",
@@ -23,9 +14,6 @@
       "dest": "/index.html"
     }
   ],
-  "build": {
-    "env": {
-      "NODE_ENV": "production"
-    }
-  }
+  "buildCommand": "npm run build",
+  "outputDirectory": "dist"
 }

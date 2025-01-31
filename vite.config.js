@@ -7,12 +7,12 @@ export default defineConfig({
     react()
   ], build: {
     outDir: 'dist',
-    assetsDir: 'assets',
     sourcemap: true
   },
+  base: '/',
   server: {
-    port: 5173, // Changed from 3000 to Vite's default port
-    strictPort: true // This ensures it uses this specific port
+    port: 5173,
+    host: true
   }
 
 })
