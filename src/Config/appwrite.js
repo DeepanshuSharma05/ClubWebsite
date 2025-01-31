@@ -1,20 +1,10 @@
-// import { Client, Account, Databases } from 'appwrite';
-//
-// const client = new Client();
-//
-// client
-//     .setEndpoint('https://cloud.appwrite.io/v1') // Replace with your Appwrite endpoint
-//     .setProject("679b6ac1000a175273d7"); // Replace with your project ID
-//
-// export const account = new Account(client);
-// export const databases = new Databases(client);
-//
-// export { client };
 
-// src/config/appwrite.js
 import { Client, Account, Databases } from 'appwrite';
 
 const client = new Client();
+
+const endpoint = import.meta.env.VITE_APPWRITE_ENDPOINT || 'https://cloud.appwrite.io/v1';
+const projectId = import.meta.env.VITE_APPWRITE_PROJECT_ID;
 
 // Your Appwrite endpoint and project ID
 client

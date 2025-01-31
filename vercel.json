@@ -1,19 +1,31 @@
 {
   "version": 2,
+  "framework": "vite",
+  "buildCommand": "npm run build",
+  "outputDirectory": "dist",
+  "installCommand": "npm install",
   "builds": [
     {
-      "src": "package.json",
-      "use": "@vercel/node",
-      "config": {
-        "maxLambdaSize": "50mb"
-      }
+      "src": "dist/**",
+      "use": "@vercel/static"
     }
   ],
-  "framework": "vite",
+  "routes": [
+    {
+      "src": "/assets/(.*)",
+      "dest": "/assets/$1"
+    },
+    {
+      "handle": "filesystem"
+    },
+    {
+      "src": "/(.*)",
+      "dest": "/index.html"
+    }
+  ],
   "build": {
     "env": {
       "NODE_ENV": "production"
     }
-  },
- "rewrites": [{ "source": "/(.*)", "destination": "/" }]
+  }
 }

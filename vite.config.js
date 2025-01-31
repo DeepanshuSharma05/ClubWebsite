@@ -7,17 +7,12 @@ export default defineConfig({
     react()
   ], build: {
     outDir: 'dist',
-    target: 'esnext',
     assetsDir: 'assets',
-    emptyOutDir: true,
-    rollupOptions: {
-      output: {
-        manualChunks: undefined
-      }
-    }
+    sourcemap: true
   },
   server: {
-    port: 3000
+    port: 5173, // Changed from 3000 to Vite's default port
+    strictPort: true // This ensures it uses this specific port
   }
 
 })
